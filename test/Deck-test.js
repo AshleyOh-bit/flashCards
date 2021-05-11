@@ -34,6 +34,6 @@ describe('Deck', function() {
 
     deck.countCards();
 
-    expect(deck.countCards).to.equal(3);
+    expect(deck.countCards()).to.equal(3);
   })
 }
