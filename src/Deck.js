@@ -4,8 +4,7 @@ class Deck {
   }
 
   countCards() {
-    const deckCount = this.stack.length;
-    return deckCount
+    return this.stack.length;
   }
 }
 
