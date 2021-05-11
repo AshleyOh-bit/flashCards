@@ -6,10 +6,10 @@ const Card = require('../src/Card');
 
 describe('Turn', function() {
 
-//   beforeEach(function() {
-//     const card = new Card((11, 'Which operator checks if two or more conditions evaluate to truthy?', ['||', '>=', '&&'], '&&'));
-//     const turn = new Turn('>=', card);
-// })
+  //   beforeEach(function() {
+  //     const card = new Card((11, 'Which operator checks if two or more conditions evaluate to truthy?', ['||', '>=', '&&'], '&&'));
+  //     const turn = new Turn('>=', card);
+  // })
 
   it('should be a function', function() {
     const turn = new Turn();
