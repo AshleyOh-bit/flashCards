@@ -1,7 +1,9 @@
 class Deck {
-  constructor() {
-
+  constructor(cards) {
+    this.stack = cards;
   }
+
+
 }
 
 module.exports = Deck
