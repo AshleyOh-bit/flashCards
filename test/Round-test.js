@@ -54,7 +54,7 @@ describe('Round', function() {
 
   it('should be able to store card ids of incorrect answers', function() {
     round.takeTurn('sea otter');
-    expect(round.incorrectGuesses[0]).to.equal(1);
+    expect(round.incorrectGuesses[0]).to.deep.equal(1);
   })
 
   //Perhaps add a happy path to test here? Combine with above test?

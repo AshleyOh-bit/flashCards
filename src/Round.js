@@ -15,6 +15,20 @@ class Round {
     return this.currentCard;
   }
 
+  takeTurn(guess) {
+    //instantiate turn
+    //how tf am i checking if these two pieces of data are related?
+    let turn = new Turn(guess, this.currentCard);
+    this.turnCount++;
+    // console.log(this.currentCard)
+    if (!turn.evaluateGuess()) {
+      this.incorrectGuesses.push(this.currentCard.id);
+      console.log(this.currentCard)
+      console.log(this.incorrectGuesses[0])
+    }
+
+  }
+
 
 }
 
