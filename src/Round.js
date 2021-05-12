@@ -2,6 +2,8 @@
 
 //NOTES
 
+// maybe add a current turn variable
+// maybe add 
 //takeTurn():
 //pushes incorrect answer card id into incorrect guesses array
   //this.incorrectGuesses.push(this.currentCard.id)
