@@ -46,27 +46,39 @@ describe('Round', function() {
       deck.returnCurrentCard()
       expect(round.returnCurrentCard()).to.deep.equal(deck.stack[0]);
     })
+
 //takeTurn() method:
     it.skip('should be able to update turn count', function() {
-      //const turn = new Turn('pug', card1);
       round.takeTurn('pug');
       expect(round.turnCount).to.equal(1);
     })
 
     it.skip('should be able to track and store incorrect answers', function() {
-      //const turn = new Turn('pug', card1);
       round.takeTurn('sea otter');
-      //instantiates new turn
-      //evaluates guesses
-        //calls turn.evaluateGuess method
-      //pushes incorrect answer card id into incorrect guesses array
-        //this.incorrectGuesses.push(this.currentCard.id)
-      //next card becomes current card
-        //this.currentCard = this.deck[this.deck.indexOf(this.currentCard)++]
-      //returns feedback
-
       expect(round.incorrectGuesses[0]).to.equal(1);
     })
+
+    it.skip('should be able to give feedback', function() {
+      //const turn = new Turn('pug', card1);
+      round.takeTurn('capybara');
+      expect(round.takeTurn()).to.equal('correct!');
+    })
+
+    it.skip('should be able to update current card', function() {
+      //const turn = new Turn('pug', card1);
+      round.takeTurn('capybara');
+      //instantiates new turn
+      expect(round.currentCard).to.equal(this.deck[1]);
+    })
+
+    //how TF do i do this lol
+    // it.skip('should be able to instantiate a new Turn', function() {
+    //   //const turn = new Turn('pug', card1);
+    //   round.takeTurn('capybara');
+    //   //instantiates new turn
+    //   expect().to.equal();
+    // })
+    
  // calculatePercentCorrect()
     // calculates and returns the percentage of correct guesses
     it.skip('should be able to calculate the percentage of correct guesses', function() {
@@ -81,17 +93,5 @@ describe('Round', function() {
  // endRound()
     // prints to console:  ‘** Round over! ** You answered
       // <>% of the questions correctly!’
-
-//NOTES:
-// instantiates Turn w/ first index of deck.stack as currentCard argument
-// updates turns count,
-// the next card in the deck.stack becomes the current card
-  // reassign the Turn.currentCard to be next in the array
-// evaluates guesses (turn.evaluateGuess())
-// gives feedback (turn.giveFeedback())
-// stores ids of incorrect guesses
-
-//assert that currentCard is first card in deck.stack
-//later in the test? after takeTurn?
 
 }
