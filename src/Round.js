@@ -44,7 +44,9 @@ class Round {
     return (this.correctGuesses.length / this.turnCount) * 100
   }
 
-
+  endRound() {
+    return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
+  }
 
 }
 
