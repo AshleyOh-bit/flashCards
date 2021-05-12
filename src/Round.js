@@ -2,7 +2,7 @@ const Turn = require('../src/Turn');
 
 class Round {
   constructor(theDeck) {
-    this.deck = theDeck.stack;
+    this.deck = theDeck;
 
     //this.incorrectGuessIds = [];
     //is this right?
@@ -34,45 +34,21 @@ class Round {
       this.correctGuesses.push(this.currentCard.id)
       turn.giveFeedback();
     }
-    return this.currentCard = this.deck[this.turnCount]
+    return this.currentCard = this.deck.stack[this.turnCount]
   }
 
   calculatePercentCorrect() {
     // console.log(this.correctGuesses)
     // console.log(this.turnCount)
     //double check this math
-    return (this.correctGuesses.length / this.turnCount) * 100
+    return Math.floor((this.correctGuesses.length / this.turnCount) * 100)
   }
 
   endRound() {
+    console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`)
     return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
   }
 
 }
 
 module.exports = Round
-
-//NOTES
-
-// maybe add a current turn variable
-// maybe add
-//takeTurn():
-//pushes incorrect answer card id into incorrect guesses array
-  //this.incorrectGuesses.push(this.currentCard.id)
-
-  //evaluates guesses
-    //calls turn.giveFeedback method
-    //next card becomes current card
-    // this.currentCard = this.deck[this.deck.indexOf(this.currentCard)++]
-
-  //NOTES:
-  // instantiates Turn w/ first index of deck.stack as currentCard argument
-  // updates turns count,
-  // the next card in the deck.stack becomes the current card
-    // reassign the Turn.currentCard to be next in the array
-  // evaluates guesses (turn.evaluateGuess())
-  // gives feedback (turn.giveFeedback())
-  // stores ids of incorrect guesses
-
-  //assert that currentCard is first card in deck.stack
-  //later in the test? after takeTurn?

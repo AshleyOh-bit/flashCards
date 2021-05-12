@@ -32,7 +32,7 @@ describe('Round', function() {
   })
 
   it('should store a deck of cards', function() {
-    expect(round.deck).to.deep.equal(deck.stack);
+    expect(round.deck).to.deep.equal(deck);
   })
 
   //is this one really necessary?
@@ -87,7 +87,7 @@ describe('Round', function() {
   it('should be able to update current card', function() {
     round.takeTurn('capybara');
 
-    expect(round.currentCard).to.equal(round.deck[1]);
+    expect(round.currentCard).to.equal(round.deck.stack[1]);
   })
 
   // calculatePercentCorrect()
