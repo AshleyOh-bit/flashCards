@@ -6,48 +6,9 @@ const Card = require('../src/Card');
 const Deck = require('../src/Deck');
 
 describe('Round', function() {
-  it.skip('should be a function', function() {
-    //const deck = new Deck();
-    expect(Round).to.be.a('function');
-  })
+  let card1, card2, card3, deck, round;
 
-  it.skip('should be an instance of Deck', function() {
-    const round = new Round();
-    expect(round).to.be.an.instanceof(Round);
-  })
-
-  it.skip('should store a deck of cards', function() {
-    const card1 = new Card(1, 'What is Robbie\'s favorite animal',
-      ['sea otter', 'pug', 'capybara'], 'sea otter');
-    const card2 = new Card(14, 'What organ is Khalid missing?',
-      ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
-    const card3 = new Card(12, 'What is Travis\'s middle name?',
-      ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
-
-    const deck = new Deck([card1, card2, card3]);
-    const round = new Round(deck);
-    expect(round.deck).to.deep.equal(deck.stack);
-  })
-
-//is this one really necessary?
-//Should we make a test to assert that turns is a prop?
-  it.skip('should be able to store incorrect guesses', function() {
-    const card1 = new Card(1, 'What is Robbie\'s favorite animal',
-      ['sea otter', 'pug', 'capybara'], 'sea otter');
-    const card2 = new Card(14, 'What organ is Khalid missing?',
-      ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
-    const card3 = new Card(12, 'What is Travis\'s middle name?',
-      ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
-
-    const deck = new Deck([card1, card2, card3]);
-    const round = new Round(deck);
-
-    expect(round.incorrectGuesses).to.deep.equal([])
-  })
-
-  //returnCurrentCard() method
-    // returns current card being played (turn.currentCard)
-    it.skip('should be able to return current card', function() {
+    beforeEach(function() {
       const card1 = new Card(1, 'What is Robbie\'s favorite animal',
         ['sea otter', 'pug', 'capybara'], 'sea otter');
       const card2 = new Card(14, 'What organ is Khalid missing?',
@@ -57,12 +18,57 @@ describe('Round', function() {
 
       const deck = new Deck([card1, card2, card3]);
       const round = new Round(deck);
+  })
+
+  it.skip('should be a function', function() {
+    //const deck = new Deck();
+    expect(Round).to.be.a('function');
+  })
+
+  it.skip('should be an instance of Deck', function() {
+    //const round = new Round();
+    expect(round).to.be.an.instanceof(Round);
+  })
+
+  it.skip('should store a deck of cards', function() {
+
+    expect(round.deck).to.deep.equal(deck.stack);
+  })
+
+//is this one really necessary?
+//Should we make a test to assert that turns is a prop?
+  it.skip('should be able to store incorrect guesses', function() {
+
+    expect(round.incorrectGuesses).to.deep.equal([])
+  })
+
+  //returnCurrentCard() method
+    // returns current card being played (turn.currentCard)
+    it.skip('should be able to return current card', function() {
 
       deck.returnCurrentCard()
 
-      expect(round.returnCurrentCard).to.deep.equal(deck.stack[0]);
+      expect(round.returnCurrentCard()).to.deep.equal(deck.stack[0]);
     })
 //takeTurn() method:
+    it.skip('should be able to return current card', function() {
+
+      //const turn = new Turn('pug', card1);
+
+      round.takeTurn('pug');
+      //instantiates new turn
+      //updates turn count
+      //evaluates guesses
+        //calls turn.evaluateGuess method
+      //pushes incorrect answer card id into incorrect guesses array
+        //this.incorrectGuesses.push(this.currentCard.id)
+      //next card becomes current card
+        //this.currentCard = this.deck[this.deck.indexOf(this.currentCard)++]
+      //returns feedback
+
+
+      expect(round.takeTurn()).to.deep.equal();
+    })
     // instantiates Turn w/ first index of deck.stack as currentCard argument
     // updates turns count,
     // the next card in the deck.stack becomes the current card
@@ -77,18 +83,9 @@ describe('Round', function() {
 
  // calculatePercentCorrect()
     // calculates and returns the percentage of correct guesses
-
     it.skip('should be able to calculate the percentage of correct guesses', function() {
-      const card1 = new Card(1, 'What is Robbie\'s favorite animal',
-        ['sea otter', 'pug', 'capybara'], 'sea otter');
-      const card2 = new Card(14, 'What organ is Khalid missing?',
-        ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
-      const card3 = new Card(12, 'What is Travis\'s middle name?',
-        ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
 
-      const deck = new Deck([card1, card2, card3]);
-      const round = new Round(deck);
-      //call take turn here
+      // //call take turn here
       //reference data here to calculate the percent correct
       deck.calculatePercentCorrect()
 
