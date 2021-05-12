@@ -1,19 +1,32 @@
+const Turn = require('../src/Turn');
 
+class Round {
+  constructor(theDeck) {
+    this.deck = theDeck.stack;
+
+    this.incorrectGuesses = [];
+    //is this right?
+    this.currentCard = theDeck.stack[0];
+    this.turnCount = 0;
+    this.incorrectGuesses = [];
+  }
+
+}
+
+module.exports = Round
 
 //NOTES
 
 // maybe add a current turn variable
-// maybe add 
+// maybe add
 //takeTurn():
 //pushes incorrect answer card id into incorrect guesses array
   //this.incorrectGuesses.push(this.currentCard.id)
 
   //evaluates guesses
     //calls turn.giveFeedback method
-
     //next card becomes current card
-      //this.currentCard = this.deck[this.deck.indexOf(this.currentCard)++]
-
+    // this.currentCard = this.deck[this.deck.indexOf(this.currentCard)++]
 
   //NOTES:
   // instantiates Turn w/ first index of deck.stack as currentCard argument

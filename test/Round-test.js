@@ -21,43 +21,43 @@ describe('Round', function() {
     round = new Round(deck);
   })
 
-  it.skip('should be a function', function() {
+  it('should be a function', function() {
     expect(Round).to.be.a('function');
   })
 
   //Do I need to make it more explicit that it's an object as a parameter?
-  it.skip('should be an instance of Deck', function() {
+  it('should be an instance of Deck', function() {
     expect(round).to.be.an.instanceof(Round);
   })
 
-  it.skip('should store a deck of cards', function() {
+  it('should store a deck of cards', function() {
     expect(round.deck).to.deep.equal(deck.stack);
   })
 
   //is this one really necessary?
   //Should we make a test to assert that turns is a prop?
-  it.skip('should be able to store incorrect guesses', function() {
+  it('should be able to store incorrect guesses', function() {
     expect(round.incorrectGuesses).to.deep.equal([])
   })
 
   //returnCurrentCard()
-  it.skip('should be able to return current card', function() {
-    deck.returnCurrentCard()
+  it('should be able to return current card', function() {
+    round.returnCurrentCard()
     expect(round.returnCurrentCard()).to.deep.equal(deck.stack[0]);
   })
 
   //takeTurn() method:
-  it.skip('should be able to update turn count', function() {
+  it('should be able to update turn count', function() {
     round.takeTurn('pug');
     expect(round.turnCount).to.equal(1);
   })
 
-  it.skip('should be able to store card ids of incorrect answers', function() {
+  it('should be able to store card ids of incorrect answers', function() {
     round.takeTurn('sea otter');
     expect(round.incorrectGuesses[0]).to.equal(1);
   })
 
-  //Perhaps add a happy path to test here?
+  //Perhaps add a happy path to test here? Combine with above test?
   it.skip('should be able to evaluate guess and give feedback', function() {
     round.takeTurn('pug');
     expect(round.takeTurn()).to.equal('incorrect!');
