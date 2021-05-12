@@ -76,38 +76,39 @@ describe('Round', function() {
   //   expect(round.takeTurn()).to.equal('correct!');
   // })
 
-  it.skip('should be able to update current card', function() {
-    round.takeTurn('capybara');
-    expect(round.currentCard).to.equal(this.deck[1]);
-  })
-
   //how do i do this This seems sus
   it('should instantiate a new Turn', function() {
     //const turn = new Turn('pug', card1);
     round.takeTurn('capybara');
-
+    //console.log(Turn)
     expect(Turn).to.exist;
   })
 
-  // calculatePercentCorrect()
-  it.skip('should calculate the percentage of correct guesses', function() {
-    round.takeTurn('pug');
+  it('should be able to update current card', function() {
     round.takeTurn('capybara');
+
+    expect(round.currentCard).to.equal(round.deck[1]);
+  })
+
+  // calculatePercentCorrect()
+  it('should calculate the percentage of correct guesses', function() {
+    round.takeTurn('pug');
+    round.takeTurn('gallbladder');
 
     round.calculatePercentCorrect()
 
-    expect(round.calculatePercentCorrect()).to.deep.equal(50);
+    expect(round.calculatePercentCorrect()).to.equal(50);
   })
 
   // endRound()
-  it.skip('should be able to announce end of round', function() {
+  it('should be able to announce end of round', function() {
     round.takeTurn('pug');
-    round.takeTurn('capybara');
+    round.takeTurn('gallbladder');
 
     round.calculatePercentCorrect()
     round.endRound()
 
-    expect(round.endRound()).to.deep.equal('** Round over! ** You answered 50% of the questions correctly!');
+    expect(round.endRound()).to.equal('** Round over! ** You answered 50% of the questions correctly!');
   })
 
 })

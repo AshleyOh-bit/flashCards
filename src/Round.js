@@ -9,7 +9,7 @@ class Round {
     this.currentCard = theDeck.stack[0];
     this.turnCount = 0;
     this.incorrectGuesses = [];
-    //this.correctGuesses = [];
+    this.correctGuesses = [];
   }
 
   returnCurrentCard() {
@@ -31,12 +31,18 @@ class Round {
     } else {
       //console.log(turn.evaluateGuess())
       //console.log(turn.giveFeedback())
-      //this.incorrectGuesses.push(this.currentCard.id)
+      this.correctGuesses.push(this.currentCard.id)
       turn.giveFeedback();
     }
     return this.currentCard = this.deck[this.turnCount]
   }
 
+  calculatePercentCorrect() {
+    // console.log(this.correctGuesses)
+    // console.log(this.turnCount)
+    //double check this math
+    return (this.correctGuesses.length / this.turnCount) * 100
+  }
 
 
 
