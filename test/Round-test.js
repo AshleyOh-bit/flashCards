@@ -25,6 +25,7 @@ describe('Round', function() {
     expect(Round).to.be.a('function');
   })
 
+//Do I need to make it more explicit that I'm passing in an object as a parameter?
   it.skip('should be an instance of Deck', function() {
     //const round = new Round();
     expect(round).to.be.an.instanceof(Round);
@@ -78,20 +79,26 @@ describe('Round', function() {
     //   //instantiates new turn
     //   expect().to.equal();
     // })
-    
+
  // calculatePercentCorrect()
-    // calculates and returns the percentage of correct guesses
     it.skip('should be able to calculate the percentage of correct guesses', function() {
+      round.takeTurn('pug');
+      round.takeTurn('capybara');
 
-      // //call take turn here
-      //reference data here to calculate the percent correct
-      deck.calculatePercentCorrect()
+      round.calculatePercentCorrect()
 
-      expect(round.calculatePercentCorrect()).to.deep.equal();
+      expect(round.calculatePercentCorrect()).to.deep.equal(50);
     })
 
  // endRound()
-    // prints to console:  ‘** Round over! ** You answered
-      // <>% of the questions correctly!’
+    it.skip('should be able to announce end of round', function() {
+      round.takeTurn('pug');
+      round.takeTurn('capybara');
+
+      round.calculatePercentCorrect()
+      round.endRound()
+
+      expect(round.endRound()).to.deep.equal(' ‘** Round over! ** You answered 50% of the questions correctly!’');
+    })
 
 }
