@@ -1,10 +1,11 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-//const Turn = require('../src/Turn');
+const Turn = require('../src/Turn');
 const Card = require('../src/Card');
 const Deck = require('../src/Deck');
 const Round = require('../src/Round');
+
 
 describe('Round', function() {
   let card1, card2, card3, deck, round;
@@ -53,28 +54,40 @@ describe('Round', function() {
   })
 
   it('should be able to store card ids of incorrect answers', function() {
-    round.takeTurn('sea otter');
-    expect(round.incorrectGuesses[0]).to.deep.equal(1);
+    round.takeTurn('capybara');
+    //console.log(round.incorrectGuesses)
+    expect(round.incorrectGuesses[0]).to.equal(1);
+    expect(round.incorrectGuesses).to.deep.equal([1]);
+    expect(round.incorrectGuesses.length).to.equal(1);
   })
 
   //Perhaps add a happy path to test here? Combine with above test?
-  it.skip('should be able to evaluate guess and give feedback', function() {
-    round.takeTurn('pug');
-    expect(round.takeTurn()).to.equal('incorrect!');
-  })
+  // it.skip('should evaluate guess and give constructive feedback', function() {
+  //   round.takeTurn('pug');
+  //   //console.log(round.takeTurn())
+  //   expect(round.takeTurn()).to.equal('incorrect!');
+  // })
+
+  // it.skip('should evaluate guess and give praising feedback', function() {
+  //   round.takeTurn('sea otter');
+  //   //console.log(round.takeTurn())
+  //
+  //   //console.log(round.currentCard)
+  //   expect(round.takeTurn()).to.equal('correct!');
+  // })
 
   it.skip('should be able to update current card', function() {
     round.takeTurn('capybara');
     expect(round.currentCard).to.equal(this.deck[1]);
   })
 
-  //how TF do i do this lol
-  // it.skip('should be able to instantiate a new Turn', function() {
-  //   //const turn = new Turn('pug', card1);
-  //   round.takeTurn('capybara');
-  //   //instantiates new turn
-  //   expect().to.equal();
-  // })
+  //how do i do this This seems sus
+  it('should instantiate a new Turn', function() {
+    //const turn = new Turn('pug', card1);
+    round.takeTurn('capybara');
+
+    expect(Turn).to.exist;
+  })
 
   // calculatePercentCorrect()
   it.skip('should calculate the percentage of correct guesses', function() {

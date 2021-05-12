@@ -4,11 +4,12 @@ class Round {
   constructor(theDeck) {
     this.deck = theDeck.stack;
 
-    this.incorrectGuesses = [];
+    //this.incorrectGuessIds = [];
     //is this right?
     this.currentCard = theDeck.stack[0];
     this.turnCount = 0;
     this.incorrectGuesses = [];
+    //this.correctGuesses = [];
   }
 
   returnCurrentCard() {
@@ -20,14 +21,23 @@ class Round {
     //how tf am i checking if these two pieces of data are related?
     let turn = new Turn(guess, this.currentCard);
     this.turnCount++;
-    // console.log(this.currentCard)
+    //console.log(this.currentCard)
+    //this.currentCard = this.deck[this.turnCount]
     if (!turn.evaluateGuess()) {
-      this.incorrectGuesses.push(this.currentCard.id);
-      console.log(this.currentCard)
-      console.log(this.incorrectGuesses[0])
+      this.incorrectGuesses.push(this.currentCard.id)
+      //console.log(this.currentCard)
+      // console.log(this.incorrectGuesses[0])
+      turn.giveFeedback();
+    } else {
+      //console.log(turn.evaluateGuess())
+      //console.log(turn.giveFeedback())
+      //this.incorrectGuesses.push(this.currentCard.id)
+      turn.giveFeedback();
     }
-
+    return this.currentCard = this.deck[this.turnCount]
   }
+
+
 
 
 }
