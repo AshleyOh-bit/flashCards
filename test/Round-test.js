@@ -42,14 +42,11 @@ describe('Round', function() {
     expect(round.correctGuesses).to.deep.equal([])
   })
 
-  //returnCurrentCard()
   it('should be able to return current card', function() {
     round.returnCurrentCard()
-    //expect(round.returnCurrentCard()).to.deep.equal(deck.stack[0]);
     expect(round.returnCurrentCard()).to.deep.equal(round.currentCard);
   })
 
-  //takeTurn() method:
   it('should be able to update turn count', function() {
     round.takeTurn('pug');
     expect(round.turnCount).to.equal(1);
@@ -57,10 +54,16 @@ describe('Round', function() {
 
   it('should be able to store card ids of incorrect answers', function() {
     round.takeTurn('capybara');
-    //console.log(round.incorrectGuesses)
     expect(round.incorrectGuesses[0]).to.equal(1);
     expect(round.incorrectGuesses).to.deep.equal([1]);
     expect(round.incorrectGuesses.length).to.equal(1);
+  })
+
+  it('should be able to store card ids of correct answers', function() {
+    round.takeTurn('sea otter');
+    expect(round.correctGuesses[0]).to.equal(1);
+    expect(round.correctGuesses).to.deep.equal([1]);
+    expect(round.correctGuesses.length).to.equal(1);
   })
 
   //Perhaps add a happy path to test here? Combine with above test?
