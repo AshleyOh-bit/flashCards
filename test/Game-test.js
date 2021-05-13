@@ -51,5 +51,10 @@ it.skip('should instantiate a Deck using Cards', function() {
   expect(game.deck).to.be.an.instanceof(Deck)
 })
 
+it.skip('should store an instance of Round', function() {
+  game.start();
+  expect(game.currentRound).to.be.a.('object')
+})
+
 
 })
