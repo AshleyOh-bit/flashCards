@@ -15,7 +15,6 @@ class Round {
 
   takeTurn(guess) {
     let turn = new Turn(guess, this.currentCard);
-    turn.evaluateGuess();
     if (!turn.evaluateGuess()) {
       this.incorrectGuesses.push(this.currentCard.id)
     } else {
