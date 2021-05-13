@@ -39,6 +39,11 @@ describe('Round', function() {
 
 //start method creates current Round
 //should keep track of the curentRound
+it.skip('should create Cards', function() {
+  game.start();
+
+  expect(game.start()).to.deep.equal([card1, card2, card3])
+})
 
 
 
