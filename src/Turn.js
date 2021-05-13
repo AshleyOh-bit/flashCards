@@ -1,5 +1,3 @@
-//const Card = require('../src/Card');
-
 class Turn {
   constructor(userAnswer, cardInPlay) {
     this.userGuess = userAnswer;
@@ -15,9 +13,6 @@ class Turn {
   }
 
   evaluateGuess() {
-    // console.log(this.currentCard)
-    // console.log(this.currentCard.correctAnswer)
-    // console.log(this.userGuess)
     if (this.currentCard.correctAnswer === this.userGuess) {
       return true
     } else {
