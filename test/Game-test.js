@@ -37,24 +37,23 @@ describe('Round', function() {
     expect(game).to.be.an.instanceof(Game);
   })
 
-//start method creates current Round
-//should keep track of the curentRound
-it.skip('should create Cards', function() {
-  game.start();
+  it.skip('should monitor current round', function() {
+    expect(game.currentRound).to.be.a.('object');
+  })
 
-  expect(game.start()).to.deep.equal([card1, card2, card3])
-})
+  //start method creates current Round
+  //should keep track of the curentRound
+  it.skip('should create Cards', function() {
+    game.start();
 
-it.skip('should instantiate a Deck using Cards', function() {
-  game.start();
+    expect(game.start()).to.deep.equal([card1, card2, card3]);
+  })
+  // may have to edit this function to be more like the function at the top
+  it.skip('should instantiate a Deck using Cards', function() {
+    game.start();
 
-  expect(game.deck).to.be.an.instanceof(Deck)
-})
-
-it.skip('should store an instance of Round', function() {
-  game.start();
-  expect(game.currentRound).to.be.a.('object')
-})
+    expect(game.deck).to.be.an.instanceof(Deck);
+  })
 
 
 })
