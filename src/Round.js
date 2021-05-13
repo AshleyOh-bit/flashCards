@@ -21,8 +21,8 @@ class Round {
     //how tf am i checking if these two pieces of data are related?
     let turn = new Turn(guess, this.currentCard);
     //this.currentCard = this.deck.stack[this.turnCount]
-    this.turnCount++;
-    this.currentCard = this.deck.stack[this.turnCount]
+    // this.turnCount++;
+    // this.currentCard = this.deck.stack[this.turnCount]
     //console.log(this.currentCard)
     //this.currentCard = this.deck[this.turnCount]
     turn.evaluateGuess();
@@ -39,6 +39,8 @@ class Round {
       //console.log(turn.giveFeedback())
       //return turn.giveFeedback();
     }
+    this.turnCount++;
+    this.currentCard = this.deck.stack[this.turnCount]
     // this.currentCard = this.deck.stack[this.turnCount]
     return turn.giveFeedback();
   }
