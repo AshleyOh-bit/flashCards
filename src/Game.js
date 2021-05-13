@@ -38,9 +38,9 @@ class Game {
     const round = new Round(this.deck);
     //console.log(round)
     //invokes printMessage to display message on CLI
-    printMessage(this.deck, round);
+    this.printMessage(this.deck, round);
     //invokes printQuestion to kick off helper functions
-    printQuestion(round);
+    this.printQuestion(round);
     //return data
   }
 
