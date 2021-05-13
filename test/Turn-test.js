@@ -7,11 +7,11 @@ const Card = require('../src/Card');
 describe('Turn', function() {
   let card, card1, turn, turn1;
 
-    beforeEach(function() {
-      card = new Card((11, 'Which operator checks if two or more conditions evaluate to truthy?', ['||', '>=', '&&'], '&&'));
-      card1 = new Card(11, 'Which operator checks if two or more conditions evaluate to truthy?', ['||', '>=', '&&'], '&&');
-      turn1 = new Turn('&&', card1);
-      turn = new Turn('>=', card);
+  beforeEach(function() {
+    card = new Card((11, 'Which operator checks if two or more conditions evaluate to truthy?', ['||', '>=', '&&'], '&&'));
+    card1 = new Card(11, 'Which operator checks if two or more conditions evaluate to truthy?', ['||', '>=', '&&'], '&&');
+    turn1 = new Turn('&&', card1);
+    turn = new Turn('>=', card);
 
   })
 
