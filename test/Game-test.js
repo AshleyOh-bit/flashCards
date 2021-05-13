@@ -45,6 +45,11 @@ it.skip('should create Cards', function() {
   expect(game.start()).to.deep.equal([card1, card2, card3])
 })
 
+it.skip('should instantiate a Deck using Cards', function() {
+  game.start();
+
+  expect(game.deck).to.be.an.instanceof(Deck)
+})
 
 
 })
