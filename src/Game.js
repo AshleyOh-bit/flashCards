@@ -36,7 +36,10 @@ class Game {
     //creates a new Round using Deck
     const round = new Round(this.deck);
     //invokes printMessage to display message on CLI
-
+    printMessage(this.deck, round);
+    //invokes printQuestion to kick off helper functions
+    printQuestion(round);
+    return data
   }
 
 }
