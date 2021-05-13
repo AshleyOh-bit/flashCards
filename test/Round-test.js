@@ -55,47 +55,25 @@ describe('Round', function() {
   it('should be able to store card ids of incorrect answers', function() {
     round.takeTurn('capybara');
     expect(round.incorrectGuesses[0]).to.equal(1);
-    expect(round.incorrectGuesses).to.deep.equal([1]);
     expect(round.incorrectGuesses.length).to.equal(1);
   })
 
   it('should be able to store card ids of correct answers', function() {
     round.takeTurn('sea otter');
     expect(round.correctGuesses[0]).to.equal(1);
-    expect(round.correctGuesses).to.deep.equal([1]);
     expect(round.correctGuesses.length).to.equal(1);
   })
 
-  //Perhaps add a happy path to test here? Combine with above test?
-  // it.skip('should evaluate guess and give constructive feedback', function() {
-  //   round.takeTurn('pug');
-  //   //console.log(round.takeTurn())
-  //   expect(round.takeTurn()).to.equal('incorrect!');
-  // })
-
-  // it.skip('should evaluate guess and give praising feedback', function() {
-  //   round.takeTurn('sea otter');
-  //   //console.log(round.takeTurn())
-  //
-  //   //console.log(round.currentCard)
-  //   expect(round.takeTurn()).to.equal('correct!');
-  // })
-
-  //how do i do this This seems sus
   it('should instantiate a new Turn', function() {
-    //const turn = new Turn('pug', card1);
     round.takeTurn('capybara');
-    //console.log(Turn)
     expect(Turn).to.exist;
   })
 
   it('should be able to update current card', function() {
     round.takeTurn('capybara');
-
     expect(round.currentCard).to.equal(round.deck.stack[1]);
   })
 
-  // calculatePercentCorrect()
   it('should calculate the percentage of correct guesses', function() {
     round.takeTurn('pug');
     round.takeTurn('gallbladder');
@@ -105,7 +83,6 @@ describe('Round', function() {
     expect(round.calculatePercentCorrect()).to.equal(50);
   })
 
-  // endRound()
   it('should be able to announce end of round', function() {
     round.takeTurn('pug');
     round.takeTurn('gallbladder');
