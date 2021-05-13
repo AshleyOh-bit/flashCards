@@ -44,7 +44,7 @@ describe('Round', function() {
 
   //should keep track of the curentRound
   //FIX THIS SHIT
-  it.skip('should create Cards', function() {
+  it('should create Cards', function() {
     game.start();
 
     expect(game.start()).to.deep.equal([card1, card2, card3]);
@@ -55,8 +55,9 @@ describe('Round', function() {
   //
   //   expect(game.deck).to.be.an.instanceof(Deck);
   // })
+
+  //is there a way to call this through the start function?
   it('should store a Deck', function() {
-    game.start();
 
     expect(game.deck).to.be.a('object');
   })

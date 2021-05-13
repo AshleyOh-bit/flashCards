@@ -33,13 +33,15 @@ class Game {
     //console.log(data)
     //creates a deck with said cards
     this.deck = new Deck(data);
+    //console.log(this.deck)
     //creates a new Round using Deck
     const round = new Round(this.deck);
+    //console.log(round)
     //invokes printMessage to display message on CLI
     printMessage(this.deck, round);
     //invokes printQuestion to kick off helper functions
     printQuestion(round);
-    return data
+    //return data
   }
 
 }
