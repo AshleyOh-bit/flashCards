@@ -10,8 +10,8 @@ const Round = require('../src/Round');
 
 class Game {
   constructor() {
-    this.currentRound = {};
-    this.deck = {};
+    this.currentRound;
+    //this.deck = {};
   }
 
   printMessage(deck, round) {
@@ -25,6 +25,7 @@ class Game {
 
   start() {
     //creates cards
+    let deck;
     let data = prototypeQuestions.map((element, index) => {
       //console.log(element)
       return new Card(element.id, element.question, element.answers, element.correctAnswer)
@@ -32,15 +33,15 @@ class Game {
     })
     //console.log(data)
     //creates a deck with said cards
-    this.deck = new Deck(data);
+    deck = new Deck(data);
     //console.log(this.deck)
     //creates a new Round using Deck
-    const round = new Round(this.deck);
+    this.currentRound = new Round(deck);
     //console.log(round)
     //invokes printMessage to display message on CLI
-    this.printMessage(this.deck, round);
+    this.printMessage(deck, this.currentRound);
     //invokes printQuestion to kick off helper functions
-    this.printQuestion(round);
+    this.printQuestion(this.currentRound);
     //return data
   }
 
