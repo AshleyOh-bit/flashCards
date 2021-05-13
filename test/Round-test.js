@@ -26,7 +26,6 @@ describe('Round', function() {
     expect(Round).to.be.a('function');
   })
 
-  //Do I need to make it more explicit that it's an object as a parameter?
   it('should be an instance of Deck', function() {
     expect(round).to.be.an.instanceof(Round);
   })
@@ -35,16 +34,19 @@ describe('Round', function() {
     expect(round.deck).to.deep.equal(deck);
   })
 
-  //is this one really necessary?
-  //Should we make a test to assert that turns is a prop?
   it('should be able to store incorrect guesses', function() {
     expect(round.incorrectGuesses).to.deep.equal([])
+  })
+
+  it('should be able to store correct guesses', function() {
+    expect(round.correctGuesses).to.deep.equal([])
   })
 
   //returnCurrentCard()
   it('should be able to return current card', function() {
     round.returnCurrentCard()
-    expect(round.returnCurrentCard()).to.deep.equal(deck.stack[0]);
+    //expect(round.returnCurrentCard()).to.deep.equal(deck.stack[0]);
+    expect(round.returnCurrentCard()).to.deep.equal(round.currentCard);
   })
 
   //takeTurn() method:
