@@ -9,10 +9,10 @@ This project was written to implement a short flashcards game. It is meant to ru
 ## Gifs of Gameplay
 
 ### Game Begin:
-![FlashCards-beginning-of-game](https://user-images.githubusercontent.com/76665215/118205050-c741e300-b41c-11eb-86c6-56414239b9ae.mov)
+![FlashCards-beginning-of-game](https://giphy.com/gifs/2b0EJOO0F5iYrQm7id)
 
 ### Game End:
-![FlashCards-end-of-game](https://user-images.githubusercontent.com/76665215/118205230-18ea6d80-b41d-11eb-8996-7c987e03ba88.mov)
+![FlashCards-end-of-game](https://giphy.com/gifs/lugp7zOoNXsiVjEbNk)
 
 
 ## Setup
