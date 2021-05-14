@@ -17,6 +17,7 @@ This project was written to implement a short flashcards game. It is meant to ru
 ![FlashCards-end-of-game](https://media.giphy.com/media/lugp7zOoNXsiVjEbNk/giphy.gif)
 
 
+
 ## Setup
 
 Clone down this repo. You can rename this project by using an optional argument when you run `git clone` (you replace the `[...]` like this:
