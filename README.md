@@ -9,10 +9,13 @@ This project was written to implement a short flashcards game. It is meant to ru
 ## Gifs of Gameplay
 
 ### Game Begin:
-![FlashCards-beginning-of-game](https://giphy.com/gifs/2b0EJOO0F5iYrQm7id)
+
+![FlashCards-beginning-of-game](https://media.giphy.com/media/2b0EJOO0F5iYrQm7id/giphy.gif)
 
 ### Game End:
-![FlashCards-end-of-game](https://giphy.com/gifs/lugp7zOoNXsiVjEbNk)
+
+![FlashCards-end-of-game](https://media.giphy.com/media/lugp7zOoNXsiVjEbNk/giphy.gif)
+
 
 
 ## Setup
@@ -32,7 +35,7 @@ npm install
 Running `node index.js` from the root of FlashCards should result in the following message being displayed in your terminal: 
 
 ```
-Welcome to FlashCards! You are playing with 30 cads.
+Welcome to FlashCards! You are playing with 30 cards.
 -----------------------------------------------------------------------
 ```
 
